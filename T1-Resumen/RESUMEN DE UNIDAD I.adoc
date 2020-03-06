@@ -1,0 +1,135 @@
+= RESUMEN UNIDAD I
+:reproducible:
+:listing-caption:
+:source-highlighter: 
+:toc:
+
+== 1. Posicinamiento
+La propiedad *position* especifía el método de posicionamiento de un elemento.
+
+Exiten cinco valores de posición diferentes
+[circle]
+* static
+* relative
+* fixed
+* absolute
+* sticky
+
+=== 1.1 static
+No se ve afectado por ninguno de los elementos top, botton, right y left.
+
+Se posiciona de acuerdo al flujo normal de la página.
+
+=== 1.2 relative
+Se coloca en relación con su posición normal.
+
+=== 1.3 fixed
+Coloca un elemento con respecto a la ventana gráfica, lo que significa que siempre permanece en el mismo lugar incluso si se desplaza la página.
+
+=== 1.4 absolute
+Se posiciona en relación con el padre posicionado más cercano.
+
+*Nota:* Un elemento "posicionado" es aquel cuya posición es cualquier cosa menos static.
+
+=== 1.5 sticky
+Se coloca en función de la posición de desplazamiento del usuario.
+Se coloca en relación hasta que se alcanza una posición de desplazamiento determinada en la ventana gráfica, luego se "queda" en su lugar (como posición: fija).
+
+*Nota:* También debe especificar al menos uno de top, right, bottomo leftpara el posicionamiento pegajosa al trabajo.
+
+== 2. Unidades de medida
+Las medidas en CSS se emplean, entre otras, para definir la altura, anchura y márgenes de los elementos y para establecer el tamaño de letra del texto. Todas las medidas se indican como un valor numérico entero o decimal seguido de una unidad de medida (sin ningún espacio en blanco entre el número y la unidad de medida).
+
+=== 2.1 Absolutas
+Su valor no depende de otro
+
+[circle]
+* in, pulgadas *(inches)* = 2.54 cm
+
+* cm, centimetros
+
+* mm, milimetros
+
+* pt, puntos = 1 pulgada = 0.35mm
+
+* pc, picas = 12 puntos = 4.23 mm
+
+=== 2.2 Relativas
+No están completamente definidas, ya que su valor siempre está referenciado respecto a otro valor.
+
+[circle]
+* em, relativa respecto al tamaño de la letra del elemento.
+
+* ex, relativo respecto a ala altura del la letra x minúscula.
+
+* px, relativa respecto a la resolucion de la pantalla del dispositivo.
+
+=== 2.3 Porcentaje
+Un porcentaje está formado por un valor numérico seguido del símbolo % y siempre está referenciado a otra medida.
+
+*Nota:* Se puede utilizar en los siguientes casos:
+
+[circle]
+* Para establecer el valor del tamaño de letra de los elementos.
+* Se utilizan para establecer la anchura de los elementos.
+
+
+== 3. Cascada
+=== 3.1 Importancia
+Cuando agregamos !important al final de nuestra declaración, salta al mayor nivel de la Cascada.
+
+=== 3.2 Origen
+Aquí hay que poner atención en donde se definio la regla.
+[circle]
+* 1. En el sitio web
+* 2. Usuario
+* 3. Navegador: Cada navegador tiene su propio conjunto de estilos.
+
+=== 3.3 Especificidad
+[circle]
+* 1. EN LINEA / INLINE: Estilos declarado dentro de una propiedad Style en html.
+* 2. ID: Utilizando la sintaxis #id
+* 3. CLASE | ATRIBUTO | PSEUDO- CLASE: 
+** Se utiliza la sintaxis *.class*. 
+** También se incluyen los atributos que se dirigen a atributos HTML, como *checked* o *href*.
+* 4. TIPO| PSEUDO- ELEMENTO| ELEMENTO: 
+** Podemos orientar elementos en función de su tipo de etiqueta , utilizando la sintaxis *type*
+** Incluye pseudo-elementos , como *:before* y *:selection*
+
+=== 3.4 Orden
+En caso de tener la misma ESPECIFICIDAD:
+
+* 1. Gana el CSS interno definido a través de bloques *style* en el propio documento HTML.
+
+* 2. El CSS externo donde toma en cuenta las reglas css
+
+* Los estilos declarados "después" siempre "ganarán"
+
+== 4. Cálculo de especificidad
+|===
+|JERARQUÍA |SELECTOR |ESPECIFICIDAD
+
+|5
+|!Important
+|1,0,0,0,0
+
+|4
+|Etiqueta HTML
+|1,0,0,0
+
+|3
+|ID
+|1,0,0
+
+|2
+|Clase, Pseudo-Clase, atributo
+|1,0
+
+
+|1
+|Tipo, Pseudo-elemento, elemento
+|1
+
+|0
+|Selector universal
+|0
