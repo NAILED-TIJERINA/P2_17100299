@@ -1,0 +1,32 @@
+body{
+    background: url(T3-Formulario\imagen\musica.png) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin: 0 top;
+    margin-top: 25%;
+    padding: 0;
+}
+.modal-content{
+    background-color: #3b4652;
+    opacity: .85;
+    padding: 0 20px;
+}
+.user.img {
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user.img img {
+    width: 100px;
+    height: 100px;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 12px;
+    border: 0;
+    padding-left: 54px;
+    border-radius: 5px;
+}
