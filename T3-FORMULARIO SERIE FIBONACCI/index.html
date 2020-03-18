@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie FiBonacci</title>
+    <script src="fibonacci.js"></script>
+</head>
+<body>
+    <form id="miFormulario" name="" method="POST" >
+        
+            <label>Numero 1: </label>
+            <input type="number" name="" id="valor1" autofocus placeholder="Escribe un numero">
+            <button onclick="limpiar();">Limpiar campos </button>
+
+            <br><br>
+            <label>Numero 2: </label>
+            <input type="number" name="" id="valor2" autofocus placeholder="Escribe un numero">
+
+            <br><br>
+            <label>Ingrese la cantidad de valores que quiere mostrar (no cuentan los anteriores): </label>
+            <input type="number" name="" id="n" autofocus placeholder="Escibe n ciclos">
+
+            <br><br>
+            <button type="button" onclick="calcular1();">Calcular Fibonacci</button>
+            <p>El resultado es:  <span id="el-resultado"></span></p>
+    </form>
+   
+</body>
+</html>
